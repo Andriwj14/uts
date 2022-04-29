@@ -18,7 +18,7 @@ public class Antrian {
             int a = 0;
             int noKtp = 0;
             while(a == 0) {
-                System.out.print("Masukkan no ktp : ");
+                System.out.print("Masukkan No KTP : ");
                 Scanner ktp = new Scanner(System.in);
                 try {
                     noKtp = ktp.nextInt();
@@ -38,14 +38,15 @@ public class Antrian {
             for(int i = 0; i < counters; i++) {
                 queue[i] = queue[i + 1];
             }
-            System.out.println("Dimohon untuk pengantri dengan no ktp :" + queue[0] );
+            System.out.println("Dimohon untuk pengantri dengan no ktp : " + queue[0] );
             System.out.println("Dipersilahkan untuk memasuki ruangan");
         }
         
         private static void displayDataQueue() {
-            System.out.print("Daftar Antrian: ");
-            for(int i = 0; i < counters; i++) {
-                System.out.print(" ["+i+" => "+queue[i]+"]" );
+            System.out.println("| No antrian |      No KTP     |");
+            for(int i = 0; i < counters; i++)
+                    {
+                System.out.println("|     " +i+ "      |       "+queue[i]+"      |" );
             }
             System.out.println("");
         }
@@ -118,11 +119,11 @@ public class Antrian {
             System.out.print("Apakah anda yakin untuk keluar dari antrian? (Y/T): ");
             quitss = new Scanner(System.in).nextLine();
             if(quitss.equalsIgnoreCase("y")) {
-                System.out.print("Terimakasih telah berkunjung");
+                System.out.println("Terimakasih telah berkunjung");
                 System.exit(0);
             }
             else {
-                System.out.print("Silahkan lanjutkan pendaftaran");
+                System.out.println("Silahkan lanjutkan pendaftaran");
                 menuProgram();
             }
         }
